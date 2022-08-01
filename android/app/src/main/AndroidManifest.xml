@@ -4,7 +4,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
    <application
-        android:label="gender_classifier"
+        android:label="Gender Classifier"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

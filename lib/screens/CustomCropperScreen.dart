@@ -52,7 +52,7 @@ class _CustomCropperScreenState extends State<CustomCropperScreen> {
     if (file == null) return;
     setState(() {
       imageFiles.add(file);
-      getAssetImage(imageFiles);
+      //getAssetImage(imageFiles);
     });
   }
 

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'CameraScreen.dart';
 import 'CropperScreen.dart';
 
 final userNameStateProvider = StateProvider<String>((ref) {
@@ -50,7 +49,9 @@ class HomeScreen extends ConsumerWidget {
               child: Stack(children: <Widget>[
                 ListView(
                   children: <Widget>[
-                    SizedBox(height: 35,),
+                    SizedBox(
+                      height: 35,
+                    ),
                     Container(
                         alignment: Alignment.center,
                         padding: const EdgeInsets.only(
@@ -86,9 +87,23 @@ class HomeScreen extends ConsumerWidget {
                     Container(
                       padding: const EdgeInsets.all(10),
                       child: TextField(
+                        style: TextStyle(color: Theme.of(context).hintColor),
                         onChanged: (value) => ref.read(userNameStateProvider.state).state = value,
                         decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
+                          labelStyle: TextStyle(color: Colors.black),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(5)),
+                            borderSide: BorderSide(color: Colors.black, width: 1.5),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(5)),
+                            borderSide: BorderSide(color: Colors.black, width: 1.5),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            gapPadding: 0.0,
+                            borderRadius: BorderRadius.all(Radius.circular(5)),
+                            borderSide: BorderSide(color: Colors.black26, width: 3),
+                          ),
                           labelText: 'User Name',
                         ),
                       ),
@@ -96,10 +111,24 @@ class HomeScreen extends ConsumerWidget {
                     Container(
                       padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
                       child: TextField(
-                        obscureText: true,
+                        style: TextStyle(color: Theme.of(context).hintColor),
                         onChanged: (value) => ref.read(passwordStateProvider.state).state = value,
                         decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
+                          labelStyle: TextStyle(color: Colors.black),
+                          hintStyle: TextStyle(color:Colors.black),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(5)),
+                            borderSide: BorderSide(color: Colors.black, width: 1.5),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(5)),
+                            borderSide: BorderSide(color: Colors.black, width: 1.5),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            gapPadding: 0.0,
+                            borderRadius: BorderRadius.all(Radius.circular(5)),
+                            borderSide: BorderSide(color: Colors.black26, width: 3),
+                          ),
                           labelText: 'Password',
                         ),
                       ),
