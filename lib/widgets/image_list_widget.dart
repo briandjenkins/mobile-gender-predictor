@@ -76,8 +76,8 @@ class ImageListWidget extends StatelessWidget {
                           children: [
                             Padding(
                               padding: const EdgeInsets.all(5.0),
-                              child: Text('${size.width}px X ${size.height}px',
-                                  style: TextStyle(fontSize: 16, color: Theme.of(context).appBarTheme.titleTextStyle?.color), textAlign: TextAlign.center),
+                              child: Text('X:${size.width}px Y:${size.height}px',
+                                  style: TextStyle(fontSize: 15, color: Theme.of(context).appBarTheme.titleTextStyle?.color), textAlign: TextAlign.center),
                             )
                           ],
                         ),
@@ -94,7 +94,7 @@ class ImageListWidget extends StatelessWidget {
                   content: Text('Image removed.'),
                   action: SnackBarAction(
                     label: 'Dissmiss',
-                    textColor: Colors.limeAccent,
+                    textColor: Theme.of(context).primaryColor,
                     onPressed: () {
                       ScaffoldMessenger.of(context).hideCurrentSnackBar();
                     },

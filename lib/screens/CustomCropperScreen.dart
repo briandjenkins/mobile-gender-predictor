@@ -76,10 +76,10 @@ class _CustomCropperScreenState extends State<CustomCropperScreen> {
         lockAspectRatio: false,
       );
 
-  Future<CroppedFile?> getAssetImage(List<CroppedFile> imageFiles) async {
-    File? f = await ImageUtils.imageToFile(imageName: 'images/131422', ext: 'jpg');
-    CroppedFile cf = CroppedFile(f!.path);
-    imageFiles.add(cf);
-    return cf;
-  }
+  // Future<CroppedFile?> getAssetImage(List<CroppedFile> imageFiles) async {
+  //   File? f = await ImageUtils.imageToFile(imageName: 'images/131422', ext: 'jpg');
+  //   CroppedFile cf = CroppedFile(f!.path);
+  //   imageFiles.add(cf);
+  //   return cf;
+  // }
 }
