@@ -18,6 +18,9 @@ final isButtonDisableStateProvider = StateProvider<bool>((ref) {
 });
 
 class HomeScreen extends ConsumerWidget {
+
+  String versionNumber = '0.04';
+
   @override
   // 2. build() method has an extra [WidgetRef] argument
   Widget build(BuildContext context, WidgetRef ref) {
@@ -70,6 +73,13 @@ class HomeScreen extends ConsumerWidget {
                         child: const Text(
                           'Deeper Learning',
                           style: TextStyle(color: Colors.white, fontWeight: FontWeight.normal, fontSize: 26),
+                        )),
+                    Container(
+                        alignment: Alignment.center,
+                        padding: const EdgeInsets.all(1),
+                        child: Text(
+                          'Version ${versionNumber}',
+                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.normal, fontSize: 13),
                         )),
                   ],
                 ),

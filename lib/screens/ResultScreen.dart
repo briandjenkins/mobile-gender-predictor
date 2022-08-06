@@ -4,8 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class ResultScreen extends ConsumerWidget {
   String gender;
+  int statusCode;
 
-  ResultScreen({super.key, required this.gender});
+  ResultScreen({super.key, required this.gender, required this.statusCode});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -17,7 +18,20 @@ class ResultScreen extends ConsumerWidget {
           alignment: Alignment.center,
           color: Colors.blue.shade300,
           child: Center(child: (gender == "male") ? Image.asset('assets/images/male.png') : Image.asset('assets/images/female.png')),
-        )
+        ),
+        Container(
+            child: Positioned(
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: EdgeInsets.all(10),
+              child: Text(
+                'Response Code: $statusCode',
+                style: TextStyle(color: Colors.white, fontWeight: FontWeight.normal, fontSize: 15),
+              ),
+            ),
+          ),
+        ))
       ]),
     );
   }

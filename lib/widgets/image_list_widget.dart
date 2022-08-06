@@ -48,7 +48,7 @@ class ImageListWidget extends StatelessWidget {
                           ProgressHUD.of(context)!.dismiss();
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => ResultScreen(gender: genderJson['gender'])),
+                            MaterialPageRoute(builder: (context) => ResultScreen(gender: genderJson['gender'], statusCode: response.statusCode,)),
                           );
                         });
                       });
